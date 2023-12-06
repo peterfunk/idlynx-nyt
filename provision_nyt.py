@@ -43,13 +43,13 @@ print(driver.current_url)
 
 driver.find_element(By.CLASS_NAME, "giftRedeem__submitButton").click()
 
-# wait for up to 15 seconds for the element with id 'email' to become available
-email_field = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.ID, 'email')))
+# wait for up to 30 seconds for the element with id 'email' to become available
+email_field = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'email')))
 email_field.send_keys(nyt_username)
 driver.find_element(By.XPATH, "//button[@type='submit']").click()
 
-# wait for up to 15 seconds for the element with id 'password' to become available
-password_field = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.ID, 'password')))
+# wait for up to 30 seconds for the element with id 'password' to become available
+password_field = WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'password')))
 password_field.send_keys(nyt_password)
 driver.find_element(By.XPATH, "//button[@type='submit']").click()
 time.sleep(5)
